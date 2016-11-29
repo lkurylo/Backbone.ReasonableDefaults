@@ -1,0 +1,25 @@
+{
+  "name": "backbone-reasonable-defaults",
+  "title": "Backbone.ReasonableDefaults",
+  "version": "0.0.1",
+  "description": "A simple plugin for making sure that our models have only the properties we assume are there",
+  "main": "src/Backbone.ReasonableDefaults.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lkurylo/Backbone.ReasonableDefaults.git"
+  },
+  "keywords": [
+    "Backbone",
+    "Backbone.Model",
+    "defaults"
+  ],
+  "author": "Łukasz Kuryło",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lkurylo/Backbone.ReasonableDefaults/issues"
+  },
+  "homepage": "https://github.com/lkurylo/Backbone.ReasonableDefaults#readme"
+}
