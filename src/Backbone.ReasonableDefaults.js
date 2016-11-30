@@ -20,28 +20,18 @@
                 } else {
                     (attrs = {})[key] = val;
                 }
-<<<<<<< HEAD
 
                 for (var i in attrs) {
                     var properties = this.default;
                     if(typeof this.default === 'function') properties = this.default();
 
                     if (!(i in properties)) {
-=======
-
-                for (var i in attrs) {
-                    if (!(i in this.default)) {
->>>>>>> cc2f75cd16c9df655a452e156760a8a1c918f84d
                         throw 'Attr ' + i + ' doesn\'t exists in the Backbone.Model defaults'
                     }
                 }
             }
 
-<<<<<<< HEAD
             original.apply(this, arguments);
-=======
-            original.set.apply(this, arguments);
->>>>>>> cc2f75cd16c9df655a452e156760a8a1c918f84d
         }
     });
 }));
