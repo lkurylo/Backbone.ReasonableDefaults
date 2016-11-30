@@ -22,13 +22,16 @@
                 }
 
                 for (var i in attrs) {
-                    if (!(i in this.default)) {
+                    var properties = this.default;
+                    if(typeof this.default === 'function') properties = this.default();
+
+                    if (!(i in properties)) {
                         throw 'Attr ' + i + ' doesn\'t exists in the Backbone.Model defaults'
                     }
                 }
             }
 
-            original.set.apply(this, arguments);
+            original.apply(this, arguments);
         }
     });
 }));
