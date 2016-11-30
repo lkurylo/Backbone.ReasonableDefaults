@@ -11,18 +11,20 @@
     var original = Backbone.Model.prototype.set;
 
     _.extend(Backbone.Model.prototype, {
-        set: function() {
-            var attrs;
+        set: function(key, val, options) {
+            if (this.default) {
+                var attrs;
 
-            if (typeof key === 'object') {
-                attrs = key;
-            } else {
-                (attrs = {})[key] = val;
-            }
+                if (typeof key === 'object') {
+                    attrs = key;
+                } else {
+                    (attrs = {})[key] = val;
+                }
 
-            for (var i in attrs) {
-                if (!(i in this.default)) {
-                    throw 'Attr ' + i + ' doesn\'t exists in the Backbone.Model defaults'
+                for (var i in attrs) {
+                    if (!(i in this.default)) {
+                        throw 'Attr ' + i + ' doesn\'t exists in the Backbone.Model defaults'
+                    }
                 }
             }
 
