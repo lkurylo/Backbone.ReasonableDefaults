@@ -8,7 +8,9 @@
 } (function(Backbone, _) {
     'use strict';
 
-    Backbone.Model = _.extend(Backbone.Model, {
+    var original = Backbone.Model.prototype.set;
+
+    _.extend(Backbone.Model.prototype, {
         set: function() {
             var attrs;
 
@@ -24,7 +26,7 @@
                 }
             }
 
-            Backbone.Model.prototype.set.apply(this, arguments);
+            original.set.apply(this, arguments);
         }
     });
 }));
