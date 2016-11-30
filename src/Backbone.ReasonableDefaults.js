@@ -1,10 +1,15 @@
 
-
-(function () {
+(function(factory) {
+    if (typeof exports === 'object') {
+        module.exports = factory(require('backbone'), require('underscore'));
+    } else if (typeof define === 'function' && define.amd) {
+        define(['backbone', 'underscore'], factory);
+    }
+} (function(Backbone, _) {
     'use strict';
-    
+
     Backbone.Model = _.extend(Backbone.Model, {
-        set: function () {
+        set: function() {
             var attrs;
 
             if (typeof key === 'object') {
@@ -22,4 +27,4 @@
             Backbone.Model.prototype.set.apply(this, arguments);
         }
     });
-});
+}));
