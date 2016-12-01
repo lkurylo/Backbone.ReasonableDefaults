@@ -21,10 +21,10 @@
                     (attrs = {})[key] = val;
                 }
 
-                for (var i in attrs) {
-                    var properties = this.default;
-                    if(typeof this.default === 'function') properties = this.default();
+                var properties = (typeof this.default === 'function') ? this.default(): this.default; 
+                //if (typeof this.default === 'function') properties = this.default();
 
+                for (var i in attrs) {
                     if (!(i in properties)) {
                         throw 'Attr ' + i + ' doesn\'t exists in the Backbone.Model defaults'
                     }
