@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/lkurylo/Backbone.ReasonableDefaults/issues"
   },
-  "homepage": "https://github.com/lkurylo/Backbone.ReasonableDefaults#readme"
+  "homepage": "https://github.com/lkurylo/Backbone.ReasonableDefaults#readme",
+  "devDependencies": {
+    "backbone": "^1.3.3",
+    "gulp": "^3.9.1",
+    "jasmine": "^2.5.2",
+    "underscore": "^1.8.3"
+  }
 }
