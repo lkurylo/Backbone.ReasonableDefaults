@@ -6,6 +6,9 @@
 
 var gulp = require('gulp');
 var karma_server = require('karma').Server;
+var uglify = require('gulp-uglify');
+var pump = require('pump');
+var rename = require('gulp-rename');
 
 gulp.task('default', function () {
 
@@ -24,4 +27,17 @@ gulp.task('tdd', function (done) {
     }, done).start();
 });
 
-gulp.task('default', ['tests']);
+gulp.task('minify', function (cb) {
+    pump([
+            gulp.src('src/*.js'),
+            uglify(),
+            rename({
+                suffix: '.min'
+            }),
+            gulp.dest('dist')
+        ],
+        cb
+    );
+});
+
+gulp.task('default', ['tests', 'minify']);
