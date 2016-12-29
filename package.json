@@ -6,7 +6,8 @@
   "main": "src/Backbone.ReasonableDefaults.js",
   "scripts": {
     "test": "gulp tests",
-    "debug": "gulp tdd"
+    "debug": "gulp tdd",
+    "deploy": "gulp"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,11 @@
   },
   "homepage": "https://github.com/lkurylo/Backbone.ReasonableDefaults#readme",
   "devDependencies": {
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-header": "^1.8.8",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
     "jasmine": "^2.5.2",
     "karma": "^1.3.0",
     "karma-chrome-launcher": "^2.0.0",
@@ -34,7 +39,8 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-mocha-reporter": "^2.2.1",
     "karma-phantomjs-launcher": "^1.0.2",
-    "karma-spec-reporter": "0.0.26"
+    "karma-spec-reporter": "0.0.26",
+    "pump": "^1.0.2"
   },
   "dependencies": {
     "backbone": "^1.3.3"
