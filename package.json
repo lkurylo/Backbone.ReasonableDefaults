@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/lkurylo/Backbone.ReasonableDefaults#readme",
   "devDependencies": {
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-header": "^1.8.8",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
     "jasmine": "^2.5.2",
