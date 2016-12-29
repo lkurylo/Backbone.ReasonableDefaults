@@ -1,11 +1,23 @@
 Backbone.ReasonableDefaults
 ========
 
-# Installation
+## Installation
 
 
 
-# License
+## Getting started
+
+## Requirements
+
+    Backbone.ReasonableDefaults has been tested against the Backbone v1.3.3. You may or may not have success if you use a version other than that.
+
+## Release notes
+
+#### v0.0.1
+
+* Initial release
+
+## License
 
 The MIT License (MIT)
 
