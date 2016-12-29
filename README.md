@@ -10,7 +10,7 @@ Backbone.ReasonableDefaults
     Plugin doesn't need any additional configuration after it is loaded. 
     Just create your Backbone models the same way you always do:
 
-    ```
+    ```javascript
     var myModel = Backbone.Model.extend({
         default: {
             //...
@@ -18,8 +18,6 @@ Backbone.ReasonableDefaults
     });
 
     ```
-
-
 
 ## Requirements
 
