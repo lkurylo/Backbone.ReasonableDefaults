@@ -8,20 +8,23 @@ Distributed under MIT License
 Full source code at https://github.com/lkurylo/Backbone.ReasonableDefaults
 
 */
-
-(function(factory) {
+(function (factory) {
     if (typeof exports === 'object') {
         module.exports = factory(require('backbone'), require('underscore'));
     } else if (typeof define === 'function' && define.amd) {
         define(['backbone', 'underscore'], factory);
+    } else {
+        factory(Backbone, _);
     }
-} (function(Backbone, _) {
+}(function (Backbone, _) {
     'use strict';
+
+    Backbone.Model.reasonableDefaultLoaded = true;
 
     var original = Backbone.Model.prototype.set;
 
     _.extend(Backbone.Model.prototype, {
-        set: function(key, val, options) {
+        set: function (key, val, options) {
             if (this.default) {
                 var attrs;
 
@@ -31,8 +34,7 @@ Full source code at https://github.com/lkurylo/Backbone.ReasonableDefaults
                     (attrs = {})[key] = val;
                 }
 
-                var properties = (typeof this.default === 'function') ? this.default(): this.default; 
-                //if (typeof this.default === 'function') properties = this.default();
+                var properties = (typeof this.default === 'function') ? this.default() : this.default;
 
                 for (var i in attrs) {
                     if (!(i in properties)) {
@@ -44,4 +46,6 @@ Full source code at https://github.com/lkurylo/Backbone.ReasonableDefaults
             original.apply(this, arguments);
         }
     });
+
+    return Backbone;
 }));
